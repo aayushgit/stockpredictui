@@ -1,0 +1,89 @@
+<html>
+<link rel="stylesheet" href="assets/css/jqx.base.css">
+    <body>
+        <table id="dataTable" border="1">
+        <thead>
+            <tr>
+                <th align="left">Company</th>
+                <th align="left">Price Today</th>
+                <th align="left">Change</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ian</td>
+                <td>Devling</td>
+                <td><span class="plus">+5<span class="caret caret-up"></span></span></td>
+
+            </tr>
+            <tr>
+                <td>Nancy</td>
+                <td>Wilson</td>
+                <td><span class="plus">+5<span class="caret caret-up"></span></span></td>
+
+            </tr>
+            <tr>
+                <td>Cheryl</td>
+                <td>Nodier</td>
+                <td><span class="plus">+5<span class="caret caret-up"></span></span></td>
+
+            </tr>
+            <tr>
+                <td>Martin</td>
+                <td>Saavedra</td>
+                <td><span class="plus">+5<span class="caret caret-up"></span></span></td>
+
+            </tr>
+            <tr>
+                <td>Guylene</td>
+                <td>Bjorn</td>
+                <td><span class="plus">+5<span class="caret caret-up"></span></span></td>
+
+            </tr>
+            <tr>
+                <td>Andrew</td>
+                <td>Burke</td>
+                <td><span class="plus">+5<span class="caret caret-up"></span></span></td>
+
+            </tr>
+            <tr>
+                <td>Regina</td>
+                <td>Murphy</td>
+                <td><span class="plus">+5<span class="caret caret-up"></span></span></td>
+
+            </tr>
+            <tr>
+                <td>Michael</td>
+                <td>Murphy</td>
+                <td><span class="plus">+5<span class="caret caret-up"></span></span></td>
+
+            </tr>
+
+        </tbody>
+    </table>
+
+        <script src="assets/js/jquery.js"></script>
+        <script type="text/javascript" src="assets/js/jqxcore.js"></script>
+        <script type="text/javascript" src="assets/js/jqxdata.js"></script>
+        <script type="text/javascript" src="assets/js/jqxbuttons.js"></script>
+        <script type="text/javascript" src="assets/js/jqxscrollbar.js"></script>
+        <script type="text/javascript" src="assets/js/jqxlistbox.js"></script>
+        <script type="text/javascript" src="assets/js/jqxdropdownlist.js"></script>
+        <script type="text/javascript" src="assets/js/jqxdatatable.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function () {
+            $("#dataTable").jqxDataTable(
+            {
+                altRows: true,
+                sortable: true,
+                columns: [
+                  { text: 'Company', dataField: 'Company', width: 100 },
+                  { text: 'Price Today', dataField: 'Price Today', width: 100 },
+                  { text: 'Change', dataField: 'Change', width: 180 },
+                ]
+            });
+        });
+    </script>
+    </body>
+</html>

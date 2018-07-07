@@ -4,20 +4,39 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/owl.carousel.css">
+        <link rel="stylesheet" href="assets/css/owl.theme.default.css">
+        <link rel="stylesheet" href="assets/css/jqx.base.css">
+        <link rel="stylesheet" href="assets/css/jqx.dark.css">
         <link rel="stylesheet" href="assets/css/style.css">
     </head>
     <body>
         <nav class="navbar navbar-static-top" style="background-color: #377BB5">
+            <div class="container-fluid">
             <a class="navbar-brand" href="#">
             <img src="assets/images/logo.png" width="30" height="30" alt="" style="margin-top: -5px"></a>
             <div class="navbar-inner">
-
+            <div class="col-sm-8">
+        <form class="navbar-form" role="search" action="search.html">
+        <div class="input-group search" style=" width:100%">
+            <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+            <!-- <div class="input-group-btn">
+                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+            </div> -->
+        </div>
+         </form>
+        </div>
+         <ul class="nav navbar-nav navbar-right login" style="">
+            <li><a href="signup.html#signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="signup.html#signin"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+            </div>
             </div>
         </nav>
         <div class="container">
             <div class="col-sm-12">
                 <div class="col-sm-6">
-                    <h4 style="color: #377BB5">Dashboard</h4>
+                    <h4 style="font-size: 1.7em;padding: 0px;margin: 0px;">Dashboard</h4>
                 </div>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb" style="text-align: right;">
@@ -26,19 +45,55 @@
                     </ol>
                 </nav>
         </div>
+        </div>
+        <div class="container">
+        <div class="row">
+            <div class="card" style="padding:10px 0px 10px 20px;">
+                <div class="owl-carousel owl-theme">
+                  <div>
+                    <h4 style="display: inline;">NMB</h4>
+                      <span class="minus">-3.25<span class="caret caret-up"></span></span>
+                  </div>
+                  <div>
+                    <h4 style="display: inline;">NMB</h4>
+                      <span class="minus">-3.25<span class="caret caret-up"></span></span>
+                  </div>
+                  <div>
+                    <h4 style="display: inline;">NMB</h4>
+                      <span class="minus">-3.25<span class="caret caret-up"></span></span>
+                  </div>
+                  <div>
+                    <h4 style="display: inline;">NMB</h4>
+                      <span class="minus">-3.25<span class="caret caret-up"></span></span>
+                  </div>
+                  <div>
+                    <h4 style="display: inline;">NMB</h4>
+                      <span class="minus">-3.25<span class="caret caret-up"></span></span>
+                  </div>
+                  <div>
+                    <h4 style="display: inline;">NMB</h4>
+                      <span class="minus">-3.25<span class="caret caret-up"></span></span>
+                  </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="container">
         <div class="row">
             <div class="col-sm-12">
                 <div class="col-sm-6">
                 <div class="card">
-                    This is Company Select Data.
-                    <div class="a" style="padding:100px 0px 100px 0px"></div>
+                    <h4 class="card-header">Market Today</h4>
+                    <div id="allcompany" style="height: 300px; min-width: 320px"></div>
+
                 </div>
                 </div>
 
                 <div class="col-sm-6">
                 <div class="card">
-                    This is Your Company Data.
-                    <div class="a" style="padding:100px 0px 100px 0px"></div>
+                    <h4 class="card-header">My Stocks </h4>
+                    <div id="mycompany" style="height: 300px; min-width: 320px"></div>
+
                 </div>
                 </div>
             </div>
@@ -49,7 +104,7 @@
                 <div class="col-sm-6">
                 <div class="card">
                     <h4 class="card-header">Instant Email</h4>
-                    <form action="" class="formsignup" style="padding: 5px">
+                    <form action="" class="email" style="padding: 5px">
                       <div class="form-group ">
                           <label class="contol-label" for="emailid"> TO:</label>
                           <div class="">
@@ -76,38 +131,143 @@
                 <div class="col-sm-6">
                 <div class="card">
                     <h4 class="card-header">Market Status</h4>
-                    <div class="table-responsive" style="height: 450px">
-                    <table class="table table-bordered" style="padding: 5px">
-                            <thead>
-                              <tr>
-                                <th>Code</th>
-                                <th>Price</th>
-                                <th>Change</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td>ADBL</td>
-                                <td>785</td>
-                                <td><span class="plus">+5<span class="caret caret-up"></span></span></td>
-                              </tr>
-                              <tr>
-                                <td>BPL</td>
-                                <td>12.34</td>
-                                <td><span class="minus">-5<span class="caret "></span></span></td>
-                              </tr>
-                              <tr>
+        <div class="table">
+        <table id="dataTable" border="1">
+        <thead>
+            <tr>
+                <th align="left">Company</th>
+                <th align="left">Price Today</th>
+                <th align="left">Change</th>
 
-                            </tbody>
-                          </table>
-                      </div>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>ADBL</td>
+                <td>120</td>
+                <td><span class="plus">+5<span class="caret caret-up"></span></span></td>
+
+            </tr>
+            <tr>
+                <td>ADBL</td>
+                <td>120</td>
+                <td><span class="plus">+5<span class="caret caret-up"></span></span></td>
+
+            </tr>
+            <tr>
+                <td>ADBL</td>
+                <td>120</td>
+                <td><span class="plus">+5<span class="caret caret-up"></span></span></td>
+
+            </tr>
+            <tr>
+                <td>ADBL</td>
+                <td>120</td>
+                <td><span class="plus">+5<span class="caret caret-up"></span></span></td>
+
+            </tr>
+            <tr>
+                <td>ADBL</td>
+                <td>120</td>
+                <td><span class="plus">+5<span class="caret caret-up"></span></span></td>
+
+            </tr>
+            <tr>
+                <td>ADBL</td>
+                <td>120</td>
+                <td><span class="plus">+5<span class="caret caret-up"></span></span></td>
+
+            </tr>
+            <tr>
+                <td>ADBL</td>
+                <td>120</td>
+                <td><span class="plus">+5<span class="caret caret-up"></span></span></td>
+
+            </tr>
+            <tr>
+                <td>ADBL</td>
+                <td>120</td>
+                <td><span class="plus">+5<span class="caret caret-up"></span></span></td>
+
+            </tr>
+            <tr>
+                <td>ADBL</td>
+                <td>120</td>
+                <td><span class="plus">+5<span class="caret caret-up"></span></span></td>
+
+            </tr>
+            <tr>
+                <td>ADBL</td>
+                <td>120</td>
+                <td><span class="plus">+5<span class="caret caret-up"></span></span></td>
+
+            </tr>
+            <tr>
+                <td>ADBL</td>
+                <td>120</td>
+                <td><span class="plus">+5<span class="caret caret-up"></span></span></td>
+
+            </tr>
+            <tr>
+                <td>ADBL</td>
+                <td>120</td>
+                <td><span class="plus">+5<span class="caret caret-up"></span></span></td>
+
+            </tr>
+            <tr>
+                <td>ADBL</td>
+                <td>120</td>
+                <td><span class="plus">+5<span class="caret caret-up"></span></span></td>
+
+            </tr>
+            <tr>
+                <td>ADBL</td>
+                <td>120</td>
+                <td><span class="plus">+5<span class="caret caret-up"></span></span></td>
+
+            </tr>
+            <tr>
+                <td>ADBL</td>
+                <td>120</td>
+                <td><span class="plus">+5<span class="caret caret-up"></span></span></td>
+
+            </tr>
+            <tr>
+                <td>ADBL</td>
+                <td>120</td>
+                <td><span class="plus">+5<span class="caret caret-up"></span></span></td>
+
+            </tr>
+            <tr>
+                <td>ADBL</td>
+                <td>120</td>
+                <td><span class="plus">+5<span class="caret caret-up"></span></span></td>
+
+            </tr>
+            <tr>
+                <td>ADBL</td>
+                <td>120</td>
+                <td><span class="plus">+5<span class="caret caret-up"></span></span></td>
+
+            </tr>
+
+
+        </tbody>
+    </table>
+    </div>
+
+
                 </div>
                 </div>
             </div>
         </div>
         <div class="a" style="margin:40px 20px 0px"></div>
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-md-12">
+                <div class="card">
+                   <h4 class="card-header">Burning</h4>
+                </div>
+                <div class="a" style="margin:40px 20px 0px"></div>
                 <div class="card">
                 <div class="col-sm-3" style="margin-bottom: 7px;">
 
@@ -120,6 +280,7 @@
                         </div>
                     </div>
                 </div>
+                <div class="form-goup"></div>
                 <div class="card">
                 <div class="col-sm-3" style="margin-bottom: 7px;">
 
@@ -132,6 +293,7 @@
                         </div>
                     </div>
                 </div>
+                <div class="form-goup"></div>
                 <div class="card">
                 <div class="col-sm-3" style="margin-bottom: 7px;">
 
@@ -144,6 +306,7 @@
                         </div>
                     </div>
                 </div>
+                <div class="form-goup"></div>
                 <div class="card">
                 <div class="col-sm-3" style="margin-bottom: 7px;">
 
@@ -156,6 +319,7 @@
                         </div>
                     </div>
                 </div>
+                <div class="form-goup"></div>
                 </div>
             </div>
             <div class="a" style="margin:30px 0px 40px 0px"></div>
@@ -166,76 +330,93 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="card">
-                        <p class="headline">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus incidunt libero, sunt consectetur nulla qui quas harum molestiae eius assumenda at totam, eum illo nobis reiciendis iure aliquam laboriosam magnam.</p>
-                        <button class="btn btn-danger">More</button>
+                        <p class="date">2018-01-5</p>
+                        <h3 class="headline">My Headline is Awesome.</h3>
+                        <p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus incidunt libero, sunt consectetur nulla qui quas harum molestiae eius assumenda at totam, eum illo nobis reiciendis iure aliquam laboriosam magnam.</p>
+
+                        <button class="btn btn-info" style="margin: 0px 10px 20px 10px;">More</button>
                         <span class="minus" style="float: right;">Neg</span>
 
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="card">
-                        <p class="headline">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus incidunt libero, sunt consectetur nulla qui quas harum molestiae eius assumenda at totam, eum illo nobis reiciendis iure aliquam laboriosam magnam.</p>
-                        <button class="btn btn-danger">More</button>
+                        <p class="date">2018-01-5</p>
+                        <h3 class="headline">My Headline is Awesome.</h3>
+                        <p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus incidunt libero, sunt consectetur nulla qui quas harum molestiae eius assumenda at totam, eum illo nobis reiciendis iure aliquam laboriosam magnam.</p>
+
+                        <button class="btn btn-info" style="margin: 0px 10px 20px 10px;">More</button>
                         <span class="minus" style="float: right;">Neg</span>
 
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="card">
-                        <p class="headline">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus incidunt libero, sunt consectetur nulla qui quas harum molestiae eius assumenda at totam, eum illo nobis reiciendis iure aliquam laboriosam magnam.</p>
-                        <button class="btn btn-danger">More</button>
+                        <p class="date">2018-01-5</p>
+                        <h3 class="headline">My Headline is Awesome.</h3>
+                        <p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus incidunt libero, sunt consectetur nulla qui quas harum molestiae eius assumenda at totam, eum illo nobis reiciendis iure aliquam laboriosam magnam.</p>
+
+                        <button class="btn btn-info" style="margin: 0px 10px 20px 10px;">More</button>
                         <span class="minus" style="float: right;">Neg</span>
 
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="card">
-                        <p class="headline">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus incidunt libero, sunt consectetur nulla qui quas harum molestiae eius assumenda at totam, eum illo nobis reiciendis iure aliquam laboriosam magnam.</p>
-                        <button class="btn btn-danger">More</button>
+                        <p class="date">2018-01-5</p>
+                        <h3 class="headline">My Headline is Awesome.</h3>
+                        <p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus incidunt libero, sunt consectetur nulla qui quas harum molestiae eius assumenda at totam, eum illo nobis reiciendis iure aliquam laboriosam magnam.</p>
+
+                        <button class="btn btn-info" style="margin: 0px 10px 20px 10px;">More</button>
                         <span class="minus" style="float: right;">Neg</span>
 
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="card">
-                        <p class="headline">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus incidunt libero, sunt consectetur nulla qui quas harum molestiae eius assumenda at totam, eum illo nobis reiciendis iure aliquam laboriosam magnam.</p>
-                        <button class="btn btn-danger">More</button>
+                        <p class="date">2018-01-5</p>
+                        <h3 class="headline">My Headline is Awesome.</h3>
+                        <p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus incidunt libero, sunt consectetur nulla qui quas harum molestiae eius assumenda at totam, eum illo nobis reiciendis iure aliquam laboriosam magnam.</p>
+
+                        <button class="btn btn-info" style="margin: 0px 10px 20px 10px;">More</button>
                         <span class="minus" style="float: right;">Neg</span>
 
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="card">
-                        <p class="headline">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus incidunt libero, sunt consectetur nulla qui quas harum molestiae eius assumenda at totam, eum illo nobis reiciendis iure aliquam laboriosam magnam.</p>
-                        <button class="btn btn-danger">More</button>
+                        <p class="date">2018-01-5</p>
+                        <h3 class="headline">My Headline is Awesome.</h3>
+                        <p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus incidunt libero, sunt consectetur nulla qui quas harum molestiae eius assumenda at totam, eum illo nobis reiciendis iure aliquam laboriosam magnam.</p>
+
+                        <button class="btn btn-info" style="margin: 0px 10px 20px 10px;">More</button>
                         <span class="minus" style="float: right;">Neg</span>
 
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="card">
-                        <p class="headline">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus incidunt libero, sunt consectetur nulla qui quas harum molestiae eius assumenda at totam, eum illo nobis reiciendis iure aliquam laboriosam magnam.</p>
-                        <button class="btn btn-danger">More</button>
+                        <p class="date">2018-01-5</p>
+                        <h3 class="headline">My Headline is Awesome.</h3>
+                        <p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus incidunt libero, sunt consectetur nulla qui quas harum molestiae eius assumenda at totam, eum illo nobis reiciendis iure aliquam laboriosam magnam.</p>
+
+                        <button class="btn btn-info" style="margin: 0px 10px 20px 10px;">More</button>
                         <span class="minus" style="float: right;">Neg</span>
 
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="card">
-                        <p class="headline">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus incidunt libero, sunt consectetur nulla qui quas harum molestiae eius assumenda at totam, eum illo nobis reiciendis iure aliquam laboriosam magnam.</p>
-                        <button class="btn btn-danger">More</button>
+                        <p class="date">2018-01-5</p>
+                        <h3 class="headline">My Headline is Awesome.</h3>
+                        <p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus incidunt libero, sunt consectetur nulla qui quas harum molestiae eius assumenda at totam, eum illo nobis reiciendis iure aliquam laboriosam magnam.</p>
+
+                        <button class="btn btn-info" style="margin: 0px 10px 20px 10px;">More</button>
                         <span class="minus" style="float: right;">Neg</span>
 
                     </div>
                 </div>
-                <div class="col-sm-4">
-                    <div class="card">
-                        <p class="headline">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus incidunt libero, sunt consectetur nulla qui quas harum molestiae eius assumenda at totam, eum illo nobis reiciendis iure aliquam laboriosam magnam.</p>
-                        <button class="btn btn-danger">More</button>
-                        <span class="minus" style="float: right;">Neg</span>
 
-                    </div>
-                </div>
 
 
 
@@ -251,5 +432,152 @@
 <div class="a" style="margin:30px 0px 40px 0px"></div>
         <script src="assets/js/jquery.js"></script>
         <script src="assets/js/bootstrap.js"></script>
+        <script src="https://code.highcharts.com/stock/highstock.js"></script>
+        <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+        <script src="assets/js/highchartdarktheme.js"></script>
+        <script src="assets/js/owl.carousel.js"></script>
+        <script type="text/javascript" src="assets/js/jqxcore.js"></script>
+        <script type="text/javascript" src="assets/js/jqxdata.js"></script>
+        <script type="text/javascript" src="assets/js/jqxbuttons.js"></script>
+        <script type="text/javascript" src="assets/js/jqxscrollbar.js"></script>
+        <script type="text/javascript" src="assets/js/jqxlistbox.js"></script>
+        <script type="text/javascript" src="assets/js/jqxdropdownlist.js"></script>
+        <script type="text/javascript" src="assets/js/jqxdatatable.js"></script>
+        <script>
+            Highcharts.setOptions(Highcharts.theme);
+            $.getJSON('https://www.highcharts.com/samples/data/aapl-c.json', function (data) {
+            // Create the chart
+            Highcharts.stockChart('allcompany', {
+
+
+                rangeSelector: {
+                    selected: 1
+                },
+
+                title: {
+                    text: 'AAPL Stock Price'
+                },
+
+                series: [{
+                    name: 'AAPL',
+                    data: data,
+                    tooltip: {
+                        valueDecimals: 2
+                    }
+                }]
+            });
+        });
+
+        </script>
+        <script>
+
+var seriesOptions = [],
+    seriesCounter = 0,
+    names = ['MSFT', 'AAPL', 'GOOG'];
+
+/**
+ * Create the chart when all data is loaded
+ * @returns {undefined}
+ */
+function createChart() {
+    Highcharts.setOptions(Highcharts.theme);
+
+    Highcharts.stockChart('mycompany', {
+
+        rangeSelector: {
+            selected: 4
+        },
+
+        yAxis: {
+            labels: {
+                formatter: function () {
+                    return (this.value > 0 ? ' + ' : '') + this.value + '%';
+                }
+            },
+            plotLines: [{
+                value: 0,
+                width: 2,
+                color: 'silver'
+            }]
+        },
+
+        plotOptions: {
+            series: {
+                compare: 'percent',
+                showInNavigator: true
+            }
+        },
+
+        tooltip: {
+            pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.change}%)<br/>',
+            valueDecimals: 2,
+            split: true
+        },
+
+        series: seriesOptions
+    });
+}
+
+$.each(names, function (i, name) {
+
+    $.getJSON('https://www.highcharts.com/samples/data/' + name.toLowerCase() + '-c.json',    function (data) {
+
+        seriesOptions[i] = {
+            name: name,
+            data: data
+        };
+
+        // As we're loading the data asynchronously, we don't know what order it will arrive. So
+        // we keep a counter and create the chart when all the data is loaded.
+        seriesCounter += 1;
+
+        if (seriesCounter === names.length) {
+            createChart();
+        }
+    });
+});
+        </script>
+
+        <script>
+            $(document).ready(function(){
+              $('.owl-carousel').owlCarousel();
+            });
+            var owl = $('.owl-carousel');
+            owl.owlCarousel({
+                items:7,
+                loop:true,
+                margin:10,
+                autoplay:true,
+                autoplayTimeout:1000,
+                autoplayHoverPause:true,
+                slidespeed:0,
+                dots: false,
+            });
+            $('.play').on('click',function(){
+                owl.trigger('play.owl.autoplay',[1000])
+            })
+            $('.stop').on('click',function(){
+                owl.trigger('stop.owl.autoplay')
+            })
+        </script>
+
+                <script type="text/javascript">
+        $(document).ready(function () {
+            $("#dataTable").jqxDataTable(
+            {
+                altRows: true,
+                sortable: true,
+                theme: 'dark',
+                columnsResize: true,
+                pageable: true,
+                columns: [
+                  { text: 'Company', dataField: 'Company', width: 190 },
+                  { text: 'Price Today', dataField: 'Price Today', width: 190 },
+                  { text: 'Change', dataField: 'Change', width: 145 },
+                ]
+            });
+        });
+    </script>
     </body>
 </html>

@@ -61,11 +61,19 @@ body{
   padding: 0px;
 }
 
-.headline{
+.content{
   padding: 0px;
   text-align: justify;
   font-weight: lighter;
   padding: 2px;
+  margin: 5px 10px 5px 10px;
+}
+
+.headline{
+  margin: 5px 10px 5px 10px;
+}
+.date{
+  margin: 5px 10px 5px 10px;
 }
 .footer p{
   margin: 10px;
@@ -73,4 +81,42 @@ body{
     font-size: 12px;
     font-weight: 100;
 
+}
+.breadcrumb {
+    background-color: #333333 !important;
+
+}
+
+.email .form-control{
+    color: #fff;
+    background-color: #212121;
+    border: none;
+    border-radius: 4px;
+    box-shadow: none;
+}
+
+.search .form-control{
+  width: 100%;
+  border: none;
+    border-radius: 4px;
+    box-shadow: none;
+    margin-top: 8px;
+
+}
+
+.login a{
+  color:inherit;
+  margin:7px 5px 0px 5px;
+}
+
+.login:hover{
+
+}
+
+.selectcompany input{
+      margin-left: 14px;
+}
+
+.selectcompany .checkbox-inline, .radio-inline {
+  padding-left: 0px;
 }
